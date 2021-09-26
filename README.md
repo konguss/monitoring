@@ -7,9 +7,9 @@ prometheus -> https://github.com/prometheus-community/helm-charts
 **Installing prometheus **
 
 Add the helm repo to your local machine 
-#helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+1. helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 Once repo is ready we can install the prometheus 
-helm install prometheus prometheus-community/prometheus
+2. helm install prometheus prometheus-community/prometheus
 
 To access the prometheus use the following command 
 #export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,component=server" -o jsonpath="{.items[0].metadata.name}")
@@ -19,9 +19,9 @@ To access the prometheus use the following command
 
 Add the repo 
 
-helm repo add grafana https://grafana.github.io/helm-charts
-helm install grafana stable/grafana
-kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana-np
+1. helm repo add grafana https://grafana.github.io/helm-charts
+2. helm install grafana stable/grafana
+3. kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana-np
 
 
 1. Get your 'admin' user password by running
